@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "first job done"
-  gated:
+  gated-selfhosted:
     needs: first
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     environment: gated
     steps:
-      - run: echo "gated job is running"
+      - run: echo "approved but no runner"
