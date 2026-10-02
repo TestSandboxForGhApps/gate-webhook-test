@@ -1,0 +1,13 @@
+name: gate-test
+on: workflow_dispatch
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "first job done"
+  gated:
+    needs: first
+    runs-on: ubuntu-latest
+    environment: gated
+    steps:
+      - run: echo "gated job is running"
